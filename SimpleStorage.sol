@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 // pragma solidity >=0.8.18 <0.9.0; //stating our version
-pragma solidity 0.8.24; //stating our version
+pragma solidity ^0.8.18; //stating our version
 
 contract SimpleStorage {
     // Basic Types: boolean, uint, int, address, bytes
     uint256 myFavoriteNumber; // 0
 
-    uint256[] ListOfFavoriteNumbers; // [0, 78, 90]
+    //uint256[] ListOfFavoriteNumbers; // [0, 78, 90]
     struct Person{
         uint256 favoriteNumber;
         string name;
@@ -24,7 +24,7 @@ contract SimpleStorage {
     // Person public pat = Person(7, "Pat");
     // Person public jon = Person(7, "Jon");
 
-    function store(uint256 _favoriteNumber) public {
+    function store(uint256 _favoriteNumber) public virtual /*virtual === overridable*/ {
         myFavoriteNumber = _favoriteNumber;
     }
 
@@ -41,3 +41,7 @@ contract SimpleStorage {
         nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
+
+contract SimpleStorage2 {}
+contract SimpleStorage3 {}
+contract SimpleStorage4 {}
